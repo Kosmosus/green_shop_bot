@@ -42,8 +42,10 @@ def welcome(message):
     keyboard.row(
         telebot.types.InlineKeyboardButton('🌱 Базилик', callback_data='Bazilik'),
         telebot.types.InlineKeyboardButton('🌱 Руккола', callback_data='Rukkola'))
-    keyboard.row(telebot.types.InlineKeyboardButton('🌱 Бораго (огуречная трава)', callback_data='Borago'))
-
+    keyboard.row(
+        telebot.types.InlineKeyboardButton('🌱 Бораго (огуречная трава)', callback_data='Borago'),
+        telebot.types.InlineKeyboardButton('🌱 Ассорти', callback_data='Assorti')
+    )
     # сообщение
     bot.send_message(message.chat.id, '*Выберите микрозелень* ↓', reply_markup=keyboard, parse_mode='Markdown')
 
@@ -81,7 +83,10 @@ def welcome_new(message):
     keyboard.row(
         telebot.types.InlineKeyboardButton('🌱 Базилик', callback_data='Bazilik'),
         telebot.types.InlineKeyboardButton('🌱 Руккола', callback_data='Rukkola'))
-    keyboard.row(telebot.types.InlineKeyboardButton('🌱 Бораго (огуречная трава)', callback_data='Borago'))
+    keyboard.row(
+        telebot.types.InlineKeyboardButton('🌱 Бораго (огуречная трава)', callback_data='Borago'),
+        telebot.types.InlineKeyboardButton('🌱 Ассорти', callback_data='Assorti')
+    )
 
     # сообщение
     bot.send_message(message.chat.id, '*Выберите микрозелень* ↓', reply_markup=keyboard, parse_mode='Markdown')
@@ -131,6 +136,9 @@ def answer(call):
             # Богаро
             elif call.data == 'Borago':
                 borago(call)
+            # Ассорти
+            elif call.data == 'Assorti':
+                assorti(call)
 
     except Exception as e:
         print(repr(e))
@@ -143,77 +151,100 @@ def my_info(message):
 
 # Редис
 def redis(call):
-    pass
+    # Картинка
+    photo = open('static/redis.png', 'rb')
+    bot.send_photo(call.message.chat.id, photo)
 
 
 # Горох
 def goroh(call):
-    pass
+    # Картинка
+    photo = open('static/goroh.png', 'rb')
+    bot.send_photo(call.message.chat.id, photo)
 
 
 # Горчица
 def gorchitsa(call):
-    pass
+    # Картинка
+    photo = open('static/gorchitsa.png', 'rb')
+    bot.send_photo(call.message.chat.id, photo)
 
 
 # Кресс-салат
 def kress_salat(call):
-    pass
+    # Картинка
+    photo = open('static/kress_salat.png', 'rb')
+    bot.send_photo(call.message.chat.id, photo)
 
 
 # Капуста листовая
 def kapusta_listovaya(call):
-    pass
+    # Картинка
+    photo = open('static/kapusta_listovaya.png', 'rb')
+    bot.send_photo(call.message.chat.id, photo)
 
 
 # Кинза
 def kinza(call):
-    pass
+    # Картинка
+    photo = open('static/kinza.png', 'rb')
+    bot.send_photo(call.message.chat.id, photo)
 
 
 # Брокооли
 def brokkoli(call):
-    pass
+    # Картинка
+    photo = open('static/brokkoli.png', 'rb')
+    bot.send_photo(call.message.chat.id, photo)
 
 
 # Морковь
 def morkov(call):
-    pass
+    # Картинка
+    photo = open('static/morkov.png', 'rb')
+    bot.send_photo(call.message.chat.id, photo)
 
 
 # Подсолнечник
 def podsolnechnik(call):
-    pass
+    # Картинка
+    photo = open('static/podsolnechnik.png', 'rb')
+    bot.send_photo(call.message.chat.id, photo)
 
 
 # Свекла
 def svekla(call):
-    pass
+    # Картинка
+    photo = open('static/svekla.png', 'rb')
+    bot.send_photo(call.message.chat.id, photo)
 
 
 # Базилик
 def bazilik(call):
-    pass
+    # Картинка
+    photo = open('static/bazilik.png', 'rb')
+    bot.send_photo(call.message.chat.id, photo)
 
 
 # Руккола
 def rukkola(call):
-    pass
+    # Картинка
+    photo = open('static/rukkola.png', 'rb')
+    bot.send_photo(call.message.chat.id, photo)
 
 
 # Богаро
 def borago(call):
-    pass
+    # Картинка
+    photo = open('static/borago.png', 'rb')
+    bot.send_photo(call.message.chat.id, photo)
 
 
-
-
-
-
-
-
-
-
+# ассорти
+def assorti(call):
+    # Картинка
+    photo = open('static/assorti.png', 'rb')
+    bot.send_photo(call.message.chat.id, photo)
 
 
 
