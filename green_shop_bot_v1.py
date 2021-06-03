@@ -7,10 +7,6 @@ bot = telebot.TeleBot('1637177992:AAF0EK96jgeBS95Mj04BxV8nP4GWJKonyZ0')
 #  Приветствие
 @bot.message_handler(commands=['start'])
 def welcome(message):
-    #  стикер при первом запуске бота
-    sti = open('static/hello.webp', 'rb')
-    bot.send_sticker(message.chat.id, sti)
-
     #  клавиатура над полем ввода
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     item0 = types.KeyboardButton("К началу ↑")
@@ -26,7 +22,7 @@ def welcome(message):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
         telebot.types.InlineKeyboardButton('🌱 Редис', callback_data='Redis'),
-        telebot.types.InlineKeyboardButton('🌱 Горох', callback_data='Goroh'))
+        telebot.types.InlineKeyboardButton('🌱 Горошек усатый', callback_data='Goroh'))
     keyboard.row(
         telebot.types.InlineKeyboardButton('🌱 Горчица', callback_data='Gorchitsa'),
         telebot.types.InlineKeyboardButton('🌱 Кресс-салат', callback_data='Kress_salat'))
@@ -38,14 +34,20 @@ def welcome(message):
         telebot.types.InlineKeyboardButton('🌱 Морковь', callback_data='Morkov'))
     keyboard.row(
         telebot.types.InlineKeyboardButton('🌱 Подсолнечник', callback_data='Podsolnechnik'),
-        telebot.types.InlineKeyboardButton('🌱 Cвекла', callback_data='Svekla'))
+        telebot.types.InlineKeyboardButton('🌱 Мангольд (свекла)', callback_data='Svekla'))
     keyboard.row(
         telebot.types.InlineKeyboardButton('🌱 Базилик', callback_data='Bazilik'),
         telebot.types.InlineKeyboardButton('🌱 Руккола', callback_data='Rukkola'))
     keyboard.row(
-        telebot.types.InlineKeyboardButton('🌱 Бораго (огуречная трава)', callback_data='Borago'),
-        telebot.types.InlineKeyboardButton('🌱 Ассорти', callback_data='Assorti')
-    )
+        telebot.types.InlineKeyboardButton('🌱 Перила пурупурная (шисо)', callback_data='Perila'),
+        telebot.types.InlineKeyboardButton('🌱 Амарант', callback_data='Amarant'))
+    keyboard.row(
+        telebot.types.InlineKeyboardButton('🌱 Мелисса', callback_data='Melissa'),
+        telebot.types.InlineKeyboardButton('🌱 Микролук', callback_data='Microluk'))
+    keyboard.row(
+        telebot.types.InlineKeyboardButton('🌱 Бораго-огуречная трава', callback_data='Borago'),
+        telebot.types.InlineKeyboardButton('🌱 Ассорти', callback_data='Assorti'))
+
     # сообщение
     bot.send_message(message.chat.id, '*Выберите микрозелень* ↓', reply_markup=keyboard, parse_mode='Markdown')
 
@@ -84,9 +86,14 @@ def welcome_new(message):
         telebot.types.InlineKeyboardButton('🌱 Базилик', callback_data='Bazilik'),
         telebot.types.InlineKeyboardButton('🌱 Руккола', callback_data='Rukkola'))
     keyboard.row(
+        telebot.types.InlineKeyboardButton('🌱 Перила пурупурная (шисо)', callback_data='Perila'),
+        telebot.types.InlineKeyboardButton('🌱 Амарант', callback_data='Amarant'))
+    keyboard.row(
+        telebot.types.InlineKeyboardButton('🌱 Мелисса', callback_data='Melissa'),
+        telebot.types.InlineKeyboardButton('🌱 Микролук', callback_data='Microluk'))
+    keyboard.row(
         telebot.types.InlineKeyboardButton('🌱 Бораго (огуречная трава)', callback_data='Borago'),
-        telebot.types.InlineKeyboardButton('🌱 Ассорти', callback_data='Assorti')
-    )
+        telebot.types.InlineKeyboardButton('🌱 Ассорти', callback_data='Assorti'))
 
     # сообщение
     bot.send_message(message.chat.id, '*Выберите микрозелень* ↓', reply_markup=keyboard, parse_mode='Markdown')
@@ -133,6 +140,18 @@ def answer(call):
             # Руккола
             elif call.data == 'Rukkola':
                 rukkola(call)
+            # Перила пурупурная (шисо)
+            elif call.data == 'Perila':
+                perila(call)
+            # Амарант
+            elif call.data == 'Amarant':
+                amarant(call)
+            # Мелисса
+            elif call.data == 'Melissa':
+                melissa(call)
+            # Микролук
+            elif call.data == 'Microluk':
+                microluk(call)
             # Богаро
             elif call.data == 'Borago':
                 borago(call)
@@ -233,6 +252,34 @@ def rukkola(call):
     bot.send_photo(call.message.chat.id, photo)
 
 
+# Перила пурупурная (шисо)
+def perila(call):
+    # Картинка
+    photo = open('static/perila.png', 'rb')
+    bot.send_photo(call.message.chat.id, photo)
+
+
+# Амарант
+def amarant(call):
+    # Картинка
+    photo = open('static/amarant.png', 'rb')
+    bot.send_photo(call.message.chat.id, photo)
+
+
+# Мелисса
+def melissa(call):
+    # Картинка
+    photo = open('static/melissa.png', 'rb')
+    bot.send_photo(call.message.chat.id, photo)
+
+
+# Микролук
+def microluk(call):
+    # Картинка
+    photo = open('static/microluk.png', 'rb')
+    bot.send_photo(call.message.chat.id, photo)
+
+
 # Богаро
 def borago(call):
     # Картинка
@@ -240,7 +287,7 @@ def borago(call):
     bot.send_photo(call.message.chat.id, photo)
 
 
-# ассорти
+# Ассорти
 def assorti(call):
     # Картинка
     photo = open('static/assorti.png', 'rb')
