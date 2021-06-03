@@ -290,7 +290,13 @@ def borago(call):
 # Ассорти
 def assorti(call):
     # Картинка
-    photo = open('static/assorti.png', 'rb')
+    photo = open('static/assorti_big.png', 'rb')
+    bot.send_photo(call.message.chat.id, photo)
+    # Картинка
+    photo = open('static/assorti_medium.png', 'rb')
+    bot.send_photo(call.message.chat.id, photo)
+    # Картинка
+    photo = open('static/assorti_small.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
 
 
