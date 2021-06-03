@@ -27,7 +27,7 @@ def welcome(message):
         telebot.types.InlineKeyboardButton('🌱 Горчица', callback_data='Gorchitsa'),
         telebot.types.InlineKeyboardButton('🌱 Кресс-салат', callback_data='Kress_salat'))
     keyboard.row(
-        telebot.types.InlineKeyboardButton('🌱 Капуста листовая', callback_data='Kapusta_listovaya'),
+        telebot.types.InlineKeyboardButton('🌱 Капуста краснокачанная', callback_data='Kapusta_listovaya'),
         telebot.types.InlineKeyboardButton('🌱 Кинза (кориандр)', callback_data='Kinza'))
     keyboard.row(
         telebot.types.InlineKeyboardButton('🌱 Брокколи', callback_data='Brokkoli'),
@@ -69,19 +69,19 @@ def welcome_new(message):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
         telebot.types.InlineKeyboardButton('🌱 Редис', callback_data='Redis'),
-        telebot.types.InlineKeyboardButton('🌱 Горох', callback_data='Goroh'))
+        telebot.types.InlineKeyboardButton('🌱 Горошек усатый', callback_data='Goroh'))
     keyboard.row(
         telebot.types.InlineKeyboardButton('🌱 Горчица', callback_data='Gorchitsa'),
         telebot.types.InlineKeyboardButton('🌱 Кресс-салат', callback_data='Kress_salat'))
     keyboard.row(
-        telebot.types.InlineKeyboardButton('🌱 Капуста листовая', callback_data='Kapusta_listovaya'),
+        telebot.types.InlineKeyboardButton('🌱 Капуста краснокачанная', callback_data='Kapusta_listovaya'),
         telebot.types.InlineKeyboardButton('🌱 Кинза (кориандр)', callback_data='Kinza'))
     keyboard.row(
         telebot.types.InlineKeyboardButton('🌱 Брокколи', callback_data='Brokkoli'),
         telebot.types.InlineKeyboardButton('🌱 Морковь', callback_data='Morkov'))
     keyboard.row(
         telebot.types.InlineKeyboardButton('🌱 Подсолнечник', callback_data='Podsolnechnik'),
-        telebot.types.InlineKeyboardButton('🌱 Cвекла', callback_data='Svekla'))
+        telebot.types.InlineKeyboardButton('🌱 Мангольд (свекла)', callback_data='Svekla'))
     keyboard.row(
         telebot.types.InlineKeyboardButton('🌱 Базилик', callback_data='Bazilik'),
         telebot.types.InlineKeyboardButton('🌱 Руккола', callback_data='Rukkola'))
@@ -92,7 +92,7 @@ def welcome_new(message):
         telebot.types.InlineKeyboardButton('🌱 Мелисса', callback_data='Melissa'),
         telebot.types.InlineKeyboardButton('🌱 Микролук', callback_data='Microluk'))
     keyboard.row(
-        telebot.types.InlineKeyboardButton('🌱 Бораго (огуречная трава)', callback_data='Borago'),
+        telebot.types.InlineKeyboardButton('🌱 Бораго-огуречная трава', callback_data='Borago'),
         telebot.types.InlineKeyboardButton('🌱 Ассорти', callback_data='Assorti'))
 
     # сообщение
