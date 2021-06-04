@@ -201,9 +201,27 @@ def redis(call):
     photo = open('static/redis.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
 
+    markup = types.InlineKeyboardMarkup(row_width=1)
+    item1 = types.InlineKeyboardButton("Описание", callback_data='Redis_info')
+    markup.add(item1)
+    bot.send_message(call.message.chat.id, '_Вы выбрали "Редис"._\n\n'
+                                           '*Редис в ассортименте:* 150 руб.',
+                     reply_markup=markup, parse_mode="Markdown")
+
 
 def redis_info(call):
-    pass
+    bot.send_message(call.message.chat.id, '🌱 *Редис*\nНемного хрустящая и жгучая на вкус микрозелень, '
+                                           'по вкусу похожа на сам корнеплод. Идеальная приправа к салатам '
+                                           'и мясным блюдам. Микрозелень редиса – это хороший источник витамина С, '
+                                           'энергии и углеводов. Он также содержит цинк, калий, фолиевую кислоту, '
+                                           'марганец, медь, натрий, фосфор, клетчатку, рибофлавин, витамины B1 и B6, '
+                                           'кальций, железо, магний и многое другое.Микрозелень редиса полезна '
+                                           'своим улучшением процесса переваривания пищи благодаря тому, '
+                                           'что в ее составе есть минералы, микроэлементы и эфирные масла, '
+                                           'но при этом не вызывает вздутие как корнеплод. Редиска является '
+                                           'натуральным мочегонным средством, обладает противовоспалительными '
+                                           'свойствами, помогает предотвратить рак легких и способствует '
+                                           'очищению крови.', parse_mode="Markdown")
 
 
 # Горох
@@ -212,9 +230,25 @@ def goroh(call):
     photo = open('static/goroh.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
 
+    markup = types.InlineKeyboardMarkup(row_width=1)
+    item2 = types.InlineKeyboardButton("Описание", callback_data='Goroh_info')
+    markup.add(item2)
+    bot.send_message(call.message.chat.id, '_Вы выбрали "Горошек усатый"._\n\n'
+                                           '*Горошек усатый:* 120 руб.',
+                     reply_markup=markup, parse_mode="Markdown")
+
 
 def goroh_info(call):
-    pass
+    bot.send_message(call.message.chat.id, '🌱 Горох\nПо вкусу микрогрин гороха слегка сладкий и имеет ореховый '
+                                           'оттенок, который напоминает молодой зелёный горошек. В пищу употребляют '
+                                           'молодые стебельки с листьями и усиками. Благодаря своей хрустящей '
+                                           'структуре, горох хорошо сочетается со свежими овощами и является '
+                                           'отличным украшением овощных супов.Польза микрозелени гороха в том, '
+                                           'что она содержит клетчатку, белок, сложные углеводы. Она богата '
+                                           'фолиевой кислотой и витаминами A, C, E, B1, B2, В3, В6. Горох '
+                                           'способствует повышению иммунитета, улучшению здоровья глаз, контролю '
+                                           'уровня сахара в крови, оказывает противораковый эффект и многое другое.',
+                     parse_mode="Markdown")
 
 
 # Горчица
@@ -222,6 +256,13 @@ def gorchitsa(call):
     # Картинка
     photo = open('static/gorchitsa.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
+
+    markup = types.InlineKeyboardMarkup(row_width=1)
+    item3 = types.InlineKeyboardButton("Описание", callback_data='Gorchitsa_info')
+    markup.add(item3)
+    bot.send_message(call.message.chat.id, '_Вы выбрали "Редис"._\n\n'
+                                           '*Редис в ассортименте:* 150 руб.',
+                     reply_markup=markup, parse_mode="Markdown")
 
 
 def gorchitsa_info(call):
@@ -234,6 +275,13 @@ def kress_salat(call):
     photo = open('static/kress_salat.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
 
+    markup = types.InlineKeyboardMarkup(row_width=1)
+    item4 = types.InlineKeyboardButton("Описание", callback_data='Kress_salat_info')
+    markup.add(item4)
+    bot.send_message(call.message.chat.id, '_Вы выбрали "Редис"._\n\n'
+                                           '*Редис в ассортименте:* 150 руб.',
+                     reply_markup=markup, parse_mode="Markdown")
+
 
 def kress_salat_info(call):
     pass
@@ -244,6 +292,13 @@ def kapusta_listovaya(call):
     # Картинка
     photo = open('static/kapusta_listovaya.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
+
+    markup = types.InlineKeyboardMarkup(row_width=1)
+    item5 = types.InlineKeyboardButton("Описание", callback_data='Kapusta_listovaya_info')
+    markup.add(item5)
+    bot.send_message(call.message.chat.id, '_Вы выбрали "Редис"._\n\n'
+                                           '*Редис в ассортименте:* 150 руб.',
+                     reply_markup=markup, parse_mode="Markdown")
 
 
 def kapusta_listovaya_info(call):
@@ -256,6 +311,13 @@ def kinza(call):
     photo = open('static/kinza.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
 
+    markup = types.InlineKeyboardMarkup(row_width=1)
+    item6 = types.InlineKeyboardButton("Описание", callback_data='Kinza_info')
+    markup.add(item6)
+    bot.send_message(call.message.chat.id, '_Вы выбрали "Редис"._\n\n'
+                                           '*Редис в ассортименте:* 150 руб.',
+                     reply_markup=markup, parse_mode="Markdown")
+
 
 def kinza_info(call):
     pass
@@ -266,6 +328,13 @@ def morkov(call):
     # Картинка
     photo = open('static/morkov.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
+
+    markup = types.InlineKeyboardMarkup(row_width=1)
+    item7 = types.InlineKeyboardButton("Описание", callback_data='Morkov_info')
+    markup.add(item7)
+    bot.send_message(call.message.chat.id, '_Вы выбрали "Редис"._\n\n'
+                                           '*Редис в ассортименте:* 150 руб.',
+                     reply_markup=markup, parse_mode="Markdown")
 
 
 def morkov_info(call):
@@ -278,6 +347,13 @@ def podsolnechnik(call):
     photo = open('static/podsolnechnik.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
 
+    markup = types.InlineKeyboardMarkup(row_width=1)
+    item8 = types.InlineKeyboardButton("Описание", callback_data='Podsolnechnik_info')
+    markup.add(item8)
+    bot.send_message(call.message.chat.id, '_Вы выбрали "Редис"._\n\n'
+                                           '*Редис в ассортименте:* 150 руб.',
+                     reply_markup=markup, parse_mode="Markdown")
+
 
 def podsolnechnik_info(call):
     pass
@@ -288,6 +364,13 @@ def svekla(call):
     # Картинка
     photo = open('static/svekla.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
+
+    markup = types.InlineKeyboardMarkup(row_width=1)
+    item9 = types.InlineKeyboardButton("Описание", callback_data='Svekla_info')
+    markup.add(item9)
+    bot.send_message(call.message.chat.id, '_Вы выбрали "Редис"._\n\n'
+                                           '*Редис в ассортименте:* 150 руб.',
+                     reply_markup=markup, parse_mode="Markdown")
 
 
 def svekla_info(call):
@@ -300,6 +383,13 @@ def bazilik(call):
     photo = open('static/bazilik.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
 
+    markup = types.InlineKeyboardMarkup(row_width=1)
+    item10 = types.InlineKeyboardButton("Описание", callback_data='Bazilik_info')
+    markup.add(item10)
+    bot.send_message(call.message.chat.id, '_Вы выбрали "Редис"._\n\n'
+                                           '*Редис в ассортименте:* 150 руб.',
+                     reply_markup=markup, parse_mode="Markdown")
+
 
 def bazilik_info(call):
     pass
@@ -310,6 +400,13 @@ def rukkola(call):
     # Картинка
     photo = open('static/rukkola.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
+
+    markup = types.InlineKeyboardMarkup(row_width=1)
+    item11 = types.InlineKeyboardButton("Описание", callback_data='Rukkola_info')
+    markup.add(item11)
+    bot.send_message(call.message.chat.id, '_Вы выбрали "Редис"._\n\n'
+                                           '*Редис в ассортименте:* 150 руб.',
+                     reply_markup=markup, parse_mode="Markdown")
 
 
 def rukkola_info(call):
@@ -322,6 +419,13 @@ def perila(call):
     photo = open('static/perila.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
 
+    markup = types.InlineKeyboardMarkup(row_width=1)
+    item12 = types.InlineKeyboardButton("Описание", callback_data='Perila_info')
+    markup.add(item12)
+    bot.send_message(call.message.chat.id, '_Вы выбрали "Редис"._\n\n'
+                                           '*Редис в ассортименте:* 150 руб.',
+                     reply_markup=markup, parse_mode="Markdown")
+
 
 def perila_info(call):
     pass
@@ -332,6 +436,13 @@ def amarant(call):
     # Картинка
     photo = open('static/amarant.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
+
+    markup = types.InlineKeyboardMarkup(row_width=1)
+    item13 = types.InlineKeyboardButton("Описание", callback_data='Amarant_info')
+    markup.add(item13)
+    bot.send_message(call.message.chat.id, '_Вы выбрали "Редис"._\n\n'
+                                           '*Редис в ассортименте:* 150 руб.',
+                     reply_markup=markup, parse_mode="Markdown")
 
 
 def amarant_info(call):
@@ -344,6 +455,13 @@ def melissa(call):
     photo = open('static/melissa.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
 
+    markup = types.InlineKeyboardMarkup(row_width=1)
+    item14 = types.InlineKeyboardButton("Описание", callback_data='Melissa_info')
+    markup.add(item14)
+    bot.send_message(call.message.chat.id, '_Вы выбрали "Редис"._\n\n'
+                                           '*Редис в ассортименте:* 150 руб.',
+                     reply_markup=markup, parse_mode="Markdown")
+
 
 def melissa_info(call):
     pass
@@ -354,6 +472,13 @@ def microluk(call):
     # Картинка
     photo = open('static/microluk.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
+
+    markup = types.InlineKeyboardMarkup(row_width=1)
+    item15 = types.InlineKeyboardButton("Описание", callback_data='Microluk_info')
+    markup.add(item15)
+    bot.send_message(call.message.chat.id, '_Вы выбрали "Редис"._\n\n'
+                                           '*Редис в ассортименте:* 150 руб.',
+                     reply_markup=markup, parse_mode="Markdown")
 
 
 def microluk_info(call):
@@ -366,6 +491,13 @@ def borago(call):
     photo = open('static/borago.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
 
+    markup = types.InlineKeyboardMarkup(row_width=1)
+    item16 = types.InlineKeyboardButton("Описание", callback_data='Borago_info')
+    markup.add(item16)
+    bot.send_message(call.message.chat.id, '_Вы выбрали "Редис"._\n\n'
+                                           '*Редис в ассортименте:* 150 руб.',
+                     reply_markup=markup, parse_mode="Markdown")
+
 
 def borago_info(call):
     pass
@@ -376,12 +508,21 @@ def assorti(call):
     # Картинка
     photo = open('static/assorti_big.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
+
+    bot.send_message(call.message.chat.id, '_Вы выбрали "Редис"._\n\n'
+                                           '*Редис в ассортименте:* 150 руб.', parse_mode="Markdown")
     # Картинка
     photo = open('static/assorti_medium.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
+
+    bot.send_message(call.message.chat.id, '_Вы выбрали "Редис"._\n\n'
+                                           '*Редис в ассортименте:* 150 руб.', parse_mode="Markdown")
     # Картинка
     photo = open('static/assorti_small.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
+
+    bot.send_message(call.message.chat.id, '_Вы выбрали "Редис"._\n\n'
+                                           '*Редис в ассортименте:* 150 руб.', parse_mode="Markdown")
 
 
 @bot.message_handler(content_types=['text'])
