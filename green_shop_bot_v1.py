@@ -77,9 +77,6 @@ def welcome_new(message):
         telebot.types.InlineKeyboardButton('🌱 Капуста краснокачанная', callback_data='Kapusta_listovaya'),
         telebot.types.InlineKeyboardButton('🌱 Кинза (кориандр)', callback_data='Kinza'))
     keyboard.row(
-        telebot.types.InlineKeyboardButton('🌱 Брокколи', callback_data='Brokkoli'),
-        telebot.types.InlineKeyboardButton('🌱 Морковь', callback_data='Morkov'))
-    keyboard.row(
         telebot.types.InlineKeyboardButton('🌱 Подсолнечник', callback_data='Podsolnechnik'),
         telebot.types.InlineKeyboardButton('🌱 Мангольд (свекла)', callback_data='Svekla'))
     keyboard.row(
@@ -92,8 +89,9 @@ def welcome_new(message):
         telebot.types.InlineKeyboardButton('🌱 Мелисса', callback_data='Melissa'),
         telebot.types.InlineKeyboardButton('🌱 Микролук', callback_data='Microluk'))
     keyboard.row(
-        telebot.types.InlineKeyboardButton('🌱 Бораго-огуречная трава', callback_data='Borago'),
-        telebot.types.InlineKeyboardButton('🌱 Ассорти', callback_data='Assorti'))
+        telebot.types.InlineKeyboardButton('🌱 Ассорти', callback_data='Assorti'),
+        telebot.types.InlineKeyboardButton('🌱 Морковь', callback_data='Morkov'))
+    keyboard.row(telebot.types.InlineKeyboardButton('🌱 Бораго-огуречная трава', callback_data='Borago'))
 
     # сообщение
     bot.send_message(message.chat.id, '*Выберите микрозелень* ↓', reply_markup=keyboard, parse_mode='Markdown')
@@ -107,54 +105,83 @@ def answer(call):
             # Редис
             if call.data == 'Redis':
                 redis(call)
+            elif call.data == 'Redis_info':
+                redis_info(call)
             # Горох
             elif call.data == 'Goroh':
                 goroh(call)
+            elif call.data == 'Goroh_info':
+                goroh_info(call)
             # Горчица
             elif call.data == 'Gorchitsa':
                 gorchitsa(call)
+            elif call.data == 'Gorchitsa_info':
+                gorchitsa_info(call)
             # Кресс-салат
             elif call.data == 'Kress_salat':
                 kress_salat(call)
+            elif call.data == 'Kress_salat_info':
+                kress_salat_info(call)
             # Капуста листовая
             elif call.data == 'Kapusta_listovaya':
                 kapusta_listovaya(call)
+            elif call.data == 'Kapusta_listovaya_info':
+                kapusta_listovaya_info(call)
             # Кинза
             elif call.data == 'Kinza':
                 kinza(call)
-            # Брокооли
-            elif call.data == 'Brokkoli':
-                brokkoli(call)
+            elif call.data == 'Kinza_info':
+                kinza_info(call)
             # Морковь
             elif call.data == 'Morkov':
                 morkov(call)
+            elif call.data == 'Morkov_info':
+                morkov_info(call)
             # Подсолнечник
             elif call.data == 'Podsolnechnik':
                 podsolnechnik(call)
+            elif call.data == 'Podsolnechnik_info':
+                podsolnechnik_info(call)
             # Свекла
             elif call.data == 'Svekla':
                 svekla(call)
+            elif call.data == 'Svekla_info':
+                svekla_info(call)
             # Базилик
             elif call.data == 'Bazilik':
                 bazilik(call)
+            elif call.data == 'Bazilik_info':
+                bazilik_info(call)
             # Руккола
             elif call.data == 'Rukkola':
                 rukkola(call)
+            elif call.data == 'Rukkola_info':
+                rukkola_info(call)
             # Перила пурупурная (шисо)
             elif call.data == 'Perila':
                 perila(call)
+            elif call.data == 'Perila_info':
+                perila_info(call)
             # Амарант
             elif call.data == 'Amarant':
                 amarant(call)
+            elif call.data == 'Amarant_info':
+                amarant_info(call)
             # Мелисса
             elif call.data == 'Melissa':
                 melissa(call)
+            elif call.data == 'Melissa_info':
+                melissa_info(call)
             # Микролук
             elif call.data == 'Microluk':
                 microluk(call)
+            elif call.data == 'Microluk_info':
+                microluk_info(call)
             # Богаро
             elif call.data == 'Borago':
                 borago(call)
+            elif call.data == 'Borago_info':
+                borago_info(call)
             # Ассорти
             elif call.data == 'Assorti':
                 assorti(call)
@@ -175,11 +202,19 @@ def redis(call):
     bot.send_photo(call.message.chat.id, photo)
 
 
+def redis_info(call):
+    pass
+
+
 # Горох
 def goroh(call):
     # Картинка
     photo = open('static/goroh.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
+
+
+def goroh_info(call):
+    pass
 
 
 # Горчица
@@ -189,11 +224,19 @@ def gorchitsa(call):
     bot.send_photo(call.message.chat.id, photo)
 
 
+def gorchitsa_info(call):
+    pass
+
+
 # Кресс-салат
 def kress_salat(call):
     # Картинка
     photo = open('static/kress_salat.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
+
+
+def kress_salat_info(call):
+    pass
 
 
 # Капуста листовая
@@ -203,6 +246,10 @@ def kapusta_listovaya(call):
     bot.send_photo(call.message.chat.id, photo)
 
 
+def kapusta_listovaya_info(call):
+    pass
+
+
 # Кинза
 def kinza(call):
     # Картинка
@@ -210,11 +257,8 @@ def kinza(call):
     bot.send_photo(call.message.chat.id, photo)
 
 
-# Брокооли
-def brokkoli(call):
-    # Картинка
-    photo = open('static/brokkoli.png', 'rb')
-    bot.send_photo(call.message.chat.id, photo)
+def kinza_info(call):
+    pass
 
 
 # Морковь
@@ -224,11 +268,19 @@ def morkov(call):
     bot.send_photo(call.message.chat.id, photo)
 
 
+def morkov_info(call):
+    pass
+
+
 # Подсолнечник
 def podsolnechnik(call):
     # Картинка
     photo = open('static/podsolnechnik.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
+
+
+def podsolnechnik_info(call):
+    pass
 
 
 # Свекла
@@ -238,11 +290,19 @@ def svekla(call):
     bot.send_photo(call.message.chat.id, photo)
 
 
+def svekla_info(call):
+    pass
+
+
 # Базилик
 def bazilik(call):
     # Картинка
     photo = open('static/bazilik.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
+
+
+def bazilik_info(call):
+    pass
 
 
 # Руккола
@@ -252,11 +312,19 @@ def rukkola(call):
     bot.send_photo(call.message.chat.id, photo)
 
 
+def rukkola_info(call):
+    pass
+
+
 # Перила пурупурная (шисо)
 def perila(call):
     # Картинка
     photo = open('static/perila.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
+
+
+def perila_info(call):
+    pass
 
 
 # Амарант
@@ -266,11 +334,19 @@ def amarant(call):
     bot.send_photo(call.message.chat.id, photo)
 
 
+def amarant_info(call):
+    pass
+
+
 # Мелисса
 def melissa(call):
     # Картинка
     photo = open('static/melissa.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
+
+
+def melissa_info(call):
+    pass
 
 
 # Микролук
@@ -280,11 +356,19 @@ def microluk(call):
     bot.send_photo(call.message.chat.id, photo)
 
 
+def microluk_info(call):
+    pass
+
+
 # Богаро
 def borago(call):
     # Картинка
     photo = open('static/borago.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
+
+
+def borago_info(call):
+    pass
 
 
 # Ассорти
@@ -298,7 +382,6 @@ def assorti(call):
     # Картинка
     photo = open('static/assorti_small.png', 'rb')
     bot.send_photo(call.message.chat.id, photo)
-
 
 
 @bot.message_handler(content_types=['text'])
